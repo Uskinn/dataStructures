@@ -11,11 +11,11 @@ func findWords(newString: String) -> [String] {
     let lowercaseString = newString.lowercased()
     var evenWords: [String] = []
     
-    let myArr: [String] = lowercaseString.components(separatedBy: CharacterSet.init(charactersIn: ",? "))// ["to", "be", ",", "or", "not", "to", "be", "?"]
-    myArr.d
+    var myArr: [String] = lowercaseString.components(separatedBy: CharacterSet.init(charactersIn: ",? "))// ["to", "be", "", "or", "not", "to", "be", ""]
+    
     for (index, _) in myArr.enumerated() {
         for i in index+1..<myArr.count {
-            if myArr[index] == myArr[i] {
+            if myArr[index] == myArr[i] && myArr[index] != "" {
                 evenWords.append(myArr[index])
             }
         }
