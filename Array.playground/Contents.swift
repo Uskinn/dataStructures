@@ -1,14 +1,15 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-let myArray = [4,5,6,5,7,8,7,4]
+//let myArray = [4,5,6,5,7,8,7,4,5]
+
+//////////// Finding the longest subarray in array //////////////////
 
 func findLongestArray(inputArray: [Int]) -> [Int] {
     
     if inputArray.count < 3 {
         return []
     }
-    
     let elementFive = 5
     let elementSeven = 7
     
@@ -24,7 +25,6 @@ func findLongestArray(inputArray: [Int]) -> [Int] {
         if element == elementFive && !isFiveFound {
             five = index
             isFiveFound = true
-            
         }
         
         if element == elementSeven  {
@@ -39,8 +39,74 @@ func findLongestArray(inputArray: [Int]) -> [Int] {
     }
     
     return subArray
-    
 }
 
-print(findLongestArray(inputArray: myArray))
+//print(findLongestArray(inputArray: myArray))
+
+///////////////// Finding the shortest subarray in array /////////////////////
+
+func findShortestSubArrayInArray(inputArray: [Int]) -> [Int] {
+    
+    if inputArray.count <= 3 {
+        return []
+    }
+    var isFiveFound: Bool = false
+    var isSevenFound: Bool = false
+    
+    var resultArray: [Int] = []
+    
+    let elementFive: Int = 5
+    let elementSeven: Int = 7
+    
+    var fiveIndex: Int = -1
+    var sevenIndex: Int = -1
+    
+    for (index5, element5) in inputArray.enumerated() {
+        for (index7, element7) in inputArray.enumerated() {
+            if element5 == elementFive && element7 == elementSeven && isSevenFound == false {
+                fiveIndex = index5
+                sevenIndex = index7
+                isSevenFound = true
+               // isFiveFound = true
+                print("5: \(fiveIndex), 7: \(sevenIndex)")
+
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+    return resultArray
+}
+
+ let myArray = [4,5,6,5,7,8,7,4,5]
+
+findShortestSubArrayInArray(inputArray: myArray)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
