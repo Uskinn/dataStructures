@@ -61,20 +61,22 @@ func findShortestSubArrayInArray(inputArray: [Int]) -> [Int] {
     var fiveIndex: Int = -1
     var sevenIndex: Int = -1
     
-    for (index5, element5) in inputArray.enumerated() {
-        for (index7, element7) in inputArray.enumerated() {
-            if element5 == elementFive && element7 == elementSeven && isSevenFound == false {
-                fiveIndex = index5
-                sevenIndex = index7
-                isSevenFound = true
-               // isFiveFound = true
-                print("5: \(fiveIndex), 7: \(sevenIndex)")
+    repeat {
+        for (index5, element5) in inputArray.enumerated() {
+            for (index7, element7) in inputArray.enumerated() {
+                if element5 == elementFive && element7 == elementSeven && isFiveFound == false {
+                    fiveIndex = index5
+                    sevenIndex = index7
+                    //isSevenFound = true
+                    print("5: \(fiveIndex), 7: \(sevenIndex)")
+                    
+                }
+                
+                }
+                    }
+    }  while fiveIndex < sevenIndex
+    
 
-            }
-            
-        }
-        
-    }
     
     
     
@@ -83,7 +85,7 @@ func findShortestSubArrayInArray(inputArray: [Int]) -> [Int] {
     return resultArray
 }
 
- let myArray = [4,5,6,5,7,8,7,4,5]
+let myArray = [4,5,6,5,7,8,7,4,5]
 
 findShortestSubArrayInArray(inputArray: myArray)
 
